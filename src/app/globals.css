@@ -5,3 +5,97 @@
   margin: 0;
   padding: 0;
 }
+
+body {
+  background-color: #f5f5f5;
+}
+
+:root {
+  --primary-color: #1c1d20;
+  --secondary-color: #f5f5f5;
+  --hover-color: #028a8a;
+}
+
+@font-face {
+  font-family: "ClashDisplay";
+  src: url("/fonts/ClashDisplay-Variable.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "LeagueSpartan";
+  src: url("/fonts/LeagueSpartan-VF.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Switzer";
+  src: url("/fonts/Switzer-Variable.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+.ClashDisplay-light {
+  font-family: "ClashDisplay";
+  font-weight: 300;
+}
+.ClashDisplay-normal {
+  font-family: "ClashDisplay";
+  font-weight: 400;
+}
+.ClashDisplay-medium {
+  font-family: "ClashDisplay";
+  font-weight: 500;
+}
+.ClashDisplay-semibold {
+  font-family: "ClashDisplay";
+  font-weight: 600;
+}
+.ClashDisplay-bold {
+  font-family: "ClashDisplay";
+  font-weight: 700;
+}
+
+.LeagueSpartan-light {
+  font-family: "LeagueSpartan";
+  font-weight: 300;
+}
+.LeagueSpartan-normal {
+  font-family: "LeagueSpartan";
+  font-weight: 400;
+}
+.LeagueSpartan-medium {
+  font-family: "LeagueSpartan";
+  font-weight: 500;
+}
+.LeagueSpartan-semibold {
+  font-family: "LeagueSpartan";
+  font-weight: 600;
+}
+.LeagueSpartan-bold {
+  font-family: "LeagueSpartan";
+  font-weight: 700;
+}
+
+.Switzer-light {
+  font-family: "Switzer";
+  font-weight: 300;
+}
+.Switzer-normal {
+  font-family: "Switzer";
+  font-weight: 400;
+}
+.Switzer-medium {
+  font-family: "Switzer";
+  font-weight: 500;
+}
+.Switzer-semibold {
+  font-family: "Switzer";
+  font-weight: 600;
+}
+.Switzer-bold {
+  font-family: "Switzer";
+  font-weight: 700;
+}
