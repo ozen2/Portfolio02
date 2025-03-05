@@ -2,8 +2,6 @@
 
 * {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
 body {
@@ -98,4 +96,24 @@ body {
 .Switzer-bold {
   font-family: "Switzer";
   font-weight: 700;
+}
+
+button {
+  overflow: hidden;
+}
+
+button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--hover-color);
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.3s ease-in-out;
+  border-radius: 100%;
+}
+
+button:hover::after {
+  transform: scaleY(1);
+  border-radius: 100%;
 }
