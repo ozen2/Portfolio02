@@ -44,7 +44,7 @@ export default function Nav() {
         onClick={handleClick}
         className={`${buttonPosition} ${
           buttonIsClicked ? "bg-(--hover-color)" : "bg-(--primary-color)"
-        } ease-in-out duration-500 z-50 w-[6rem] h-[6rem] rounded-full fixed top-10 right-10 flex items-center justify-center buttonHover overflow-hidden group`}
+        } buttonNav hover:cursor-pointer ease-in-out duration-500 z-50 w-[6rem] h-[6rem] rounded-full fixed top-10 right-10 flex items-center justify-center buttonHover overflow-hidden group`}
       >
         <div className="relative z-50 flex flex-col items-center justify-center">
           <span
@@ -61,7 +61,7 @@ export default function Nav() {
         <span className="absolute inset-0 bg-(--hover-color) transition-transform duration-500 transform origin-bottom scale-y-0 group-hover:scale-y-100 rounded-full"></span>
       </button>
       <nav
-        className={`${isNavVisible} w-1/3 justify-self-end fixed right-0 top-0 bg-(--primary-color) h-screen flex flex-col justify-center`}
+        className={`${isNavVisible} w-1/3 justify-self-end fixed right-0 top-0 bg-(--primary-color) h-screen flex flex-col z-40 justify-center`}
       >
         <ul className="flex flex-col justify-between gap-14 items-center Switzer-normal text-6xl text-(--secondary-color)">
           <li>

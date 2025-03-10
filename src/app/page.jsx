@@ -3,26 +3,33 @@ import Button from "./components/buttons/Button";
 import Nav from "./components/navbar/Nav";
 
 import logo from "../../public/logo/logoYumeBlack.svg";
+import portrait from "../../public/images/portraitEnzo.png";
+import Title from "./components/title/Title";
+import SecondSection from "./components/sections/SecondSection";
+import IntroAnimation from "./components/intro/IntroAnimation";
 
 export default function page() {
   return (
-    <main className="h-[200rem]">
+    <main className="relative overflow-hidden h-[100rem]">
+      <IntroAnimation />
       <div className="mt-10 mr-14">
         <Nav />
       </div>
-      <section className="mx-14">
+      <section className="mx-14 h-screen relative">
         <Image src={logo} alt="logo" width={100} height={100} />
-        <div className="flex gap-56">
-          <h1 className="ClashDisplay-semibold text-[18.75rem]">YU</h1>
-          <h1 className="ClashDisplay-semibold text-[18.75rem]">ME</h1>
+        <div className="mx-20">
+          <Title />
         </div>
-        <Button
-          content="À propos de moi"
-          href={"/about"}
-          width={"w-[17rem]"}
-          height={"h-[8rem]"}
+        <Image
+          src={portrait}
+          alt="logo"
+          width={100}
+          height={100}
+          className="w-[45rem] z-20 absolute bottom-0 left-[53%] transform -translate-x-1/2"
+          unoptimized={true}
         />
       </section>
+      <SecondSection />
     </main>
   );
 }

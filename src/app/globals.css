@@ -98,11 +98,11 @@ body {
   font-weight: 700;
 }
 
-button {
+.buttonNav {
   overflow: hidden;
 }
 
-button::after {
+.buttonNav::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -113,7 +113,27 @@ button::after {
   border-radius: 100%;
 }
 
-button:hover::after {
+.buttonNav:hover::after {
   transform: scaleY(1);
   border-radius: 100%;
+}
+
+.buttonAbout {
+  overflow: hidden;
+}
+
+.buttonAbout::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--hover-color);
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.3s ease-in-out;
+  border-radius: 100%;
+}
+
+.buttonAbout:hover::after {
+  transform: scaleY(1);
+  border-radius: 30%;
 }
