@@ -9,22 +9,28 @@ export default function IntroAnimation() {
   const titleRef = useRef(null);
 
   useEffect(() => {
-    const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+    const tl = gsap.timeline({ defaults: { ease: "power1.inOut" } });
 
-    tl.to(introRef.current, { opacity: 1, duration: 0.5 }) // Apparition de l'écran blanc
+    tl.to(introRef.current, { opacity: 1, duration: 0.5 })
+      .to(titleRef.current, { opacity: 1, duration: 1 }, "+=0.5")
       .to(
-        titleRef.current,
-        { opacity: 1, duration: 1 }, // Animation de l'opacité pour l'apparition de YU et ME
-        "+=0.5"
+        introRef.current,
+        {
+          y: "-100%",
+          borderRadius: "100%",
+          duration: 1,
+        },
+        "+=3"
       )
-      .to(introRef.current, { y: "-100%", duration: 1 }, "+=0.8") // Délai avant le slide up
-      .set(introRef.current, { display: "none" }); // Cache l'écran d'intro
+      .set(introRef.current, { display: "none" });
   }, []);
 
   return (
     <div
       ref={introRef}
-      className="fixed inset-0 bg-(--primary-color) flex items-center justify-center z-50"
-    ></div>
+      className="fixed left-1/2 transform -translate-x-1/2 w-[200vw] inset-0 bg-(--primary-color) flex items-center justify-center z-50"
+    >
+      <Title />
+    </div>
   );
 }

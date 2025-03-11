@@ -3,78 +3,74 @@
 import { useEffect, useRef, forwardRef } from "react";
 import { gsap } from "gsap";
 
-const Title = forwardRef(({ props }, ref) => {
-  const h1Ref1 = useRef(null);
-  const h1Ref2 = useRef(null);
-  const titleRef = useRef(null);
+const Title = forwardRef(() => {
+  const wordRefs = useRef([]);
+
+  const words = [
+    "夢",
+    "Traum",
+    "Sogno",
+    "Sueño",
+    "Dream",
+    "Rêve",
+    "夢",
+    "Traum",
+    "Sogno",
+    "Sueño",
+    "Dream",
+    "Rêve",
+    "Yume",
+  ];
 
   useEffect(() => {
-    const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+    const tl = gsap.timeline({ defaults: { ease: "none" } });
 
-    // Animation des lettres
-    tl.fromTo(
-      [h1Ref1.current, h1Ref2.current],
-      { y: "100%" },
-      {
-        y: "0%",
-        duration: 1,
-        delay: 0.5,
-        stagger: 0.2,
-        ease: "power3.out",
+    const initialDuration = 0.05;
+    const slowdownStart = Math.floor(words.length / 2);
+    const maxSlowdownDuration = 0.2;
+
+    words.forEach((word, index) => {
+      const isAfterMiddle = index >= slowdownStart;
+      const progress = isAfterMiddle
+        ? (index - slowdownStart) / (words.length - slowdownStart)
+        : 0;
+
+      const duration =
+        initialDuration + progress * (maxSlowdownDuration - initialDuration);
+
+      if (word === "Yume") {
+        tl.fromTo(
+          wordRefs.current[index],
+          { y: "100%" },
+          { y: "0%", duration: 0.5, ease: "power2.inOut" }
+        ).to(wordRefs.current[index], {
+          y: "0%",
+          duration: 0.5,
+          ease: "power2.inOut",
+        });
+      } else {
+        tl.fromTo(
+          wordRefs.current[index],
+          { y: "100%" },
+          { y: "0%", duration: duration },
+          `+=${0.01 * index}`
+        ).to(wordRefs.current[index], { y: "-100%", duration: duration });
       }
-    );
-
-    // Animation de l'espacement des lettres (gap)
-    tl.to(
-      titleRef.current,
-      {
-        gap: "14rem", // Espacement des lettres
-        duration: 1, // Durée de l'animation
-      },
-      "+=0.8" // Délai avant cette animation
-    );
-
-    // Nouvelle timeline pour gérer le zIndex séparément
-    const tlZIndex = gsap.timeline();
-    tlZIndex.to(
-      titleRef.current,
-      {
-        zIndex: -1, // Changement du z-index // Durée de l'animation
-      },
-      "+=2.8" // Délai avant cette animation
-    );
-
-    const tlColor = gsap.timeline();
-    tlColor.to(
-      [h1Ref1.current, h1Ref2.current],
-      {
-        color: "var(--primary-color)", // Changer la couleur du texte en primary-color
-        duration: 1, // Durée de l'animation
-      },
-      "+=2.9" // Délai avant cette animation
-    );
+    });
   }, []);
 
   return (
-    <>
-      <div
-        ref={titleRef}
-        className="flex overflow-hidden h-[330px] justify-start absolute top-30 left-1/2 transform -translate-x-1/2 z-50"
-      >
+    <div className="overflow-hidden h-[350px] w-full flex items-center justify-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50">
+      {words.map((word, index) => (
         <h1
-          ref={h1Ref1}
-          className="ClashDisplay-semibold relative text-[18.75rem] text-(--secondary-color) translate-y-[100%]"
+          key={index}
+          ref={(el) => (wordRefs.current[index] = el)}
+          className="absolute font-semibold text-[18rem] text-(--secondary-color) translate-y-[100%]"
         >
-          YU
+          {word}
         </h1>
-        <h1
-          ref={h1Ref2}
-          className="ClashDisplay-semibold text-[18.75rem] text-(--secondary-color) translate-y-[100%]"
-        >
-          ME
-        </h1>
-      </div>
-    </>
+      ))}
+    </div>
   );
 });
 

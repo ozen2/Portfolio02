@@ -11,15 +11,13 @@ import IntroAnimation from "./components/intro/IntroAnimation";
 export default function page() {
   return (
     <main className="relative overflow-hidden h-[100rem]">
-      <IntroAnimation />
       <div className="mt-10 mr-14">
         <Nav />
       </div>
+      <IntroAnimation />
       <section className="mx-14 h-screen relative">
         <Image src={logo} alt="logo" width={100} height={100} />
-        <div className="mx-20">
-          <Title />
-        </div>
+        <div className="mx-20"></div>
         <Image
           src={portrait}
           alt="logo"
