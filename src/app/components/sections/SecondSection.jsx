@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Button from "../buttons/Button";
+import HorizontalScroll from "../horizontalScroll/HorizontalScroll";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -30,26 +31,21 @@ export default function SecondSection() {
   return (
     <section
       ref={sectionRef}
-      className="absolute top-0 left-0 w-full h-screen bg-(--secondary-color) flex justify-between pt-20 z-30"
+      className="absolute top-0 left-0 w-full h-[300rem] bg-(--secondary-color) flex flex-col z-30 px-32"
     >
-      <p className="text-[2rem] ml-32 Switzer-light pr-20">
-        Dans un monde où l'attention est éphémère, mon objectif est d'aider les
-        marques à capter, engager et marquer les esprits durablement grâce à des
-        stratégies digitales sur mesure.
+      <p className="text-[7rem] Switzer-semibold mt-20">Dans un monde où</p>
+      <p className="text-[7rem] Switzer-semibold self-end">l'attention</p>
+      <p className="text-[7rem] Switzer-semibold">est éphémère,</p>
+      <p className="text-[7rem] Switzer-semibold self-end">mon objectif est</p>
+      <p className="text-[7rem] Switzer-semibold">
+        d'aider les entreprises à capter,
       </p>
-      <div className="flex mr-32 flex-col pl-20 gap-20">
-        <p className="text-xl Switzer-light">
-          L'alliance de mon amour pour le design, la programmation et
-          l'interaction me permet d'apporter une approche unique et innovante au
-          web.
-        </p>
-        <Button
-          content="À propos de moi"
-          width="w-[17rem]"
-          height="h-[8rem]"
-          href="/about"
-        />
-      </div>
+      <p className="text-[7rem] Switzer-semibold">engager</p>
+      <p className="text-[7rem] Switzer-semibold">et marquer les esprits</p>
+      <p className="text-[7rem] Switzer-semibold self-end">durablement</p>
+      <p className="text-[7rem] Switzer-semibold">
+        grâce à des stratégies digitales sur mesure.
+      </p>
     </section>
   );
 }

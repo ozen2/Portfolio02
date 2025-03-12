@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import Title from "../title/Title";
+import TitleIntro from "../title/TitleIntro";
 
 export default function IntroAnimation() {
   const introRef = useRef(null);
@@ -20,7 +20,7 @@ export default function IntroAnimation() {
           borderRadius: "100%",
           duration: 1,
         },
-        "+=3"
+        "+=4"
       )
       .set(introRef.current, { display: "none" });
   }, []);
@@ -30,7 +30,7 @@ export default function IntroAnimation() {
       ref={introRef}
       className="fixed left-1/2 transform -translate-x-1/2 w-[200vw] inset-0 bg-(--primary-color) flex items-center justify-center z-50"
     >
-      <Title />
+      <TitleIntro />
     </div>
   );
 }
