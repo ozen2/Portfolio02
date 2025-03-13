@@ -27,7 +27,7 @@ export default function page() {
           alt="portrait"
           width={100}
           height={100}
-          className="w-[45rem] z-20 absolute bottom-0 left-[53%] transform -translate-x-1/2"
+          className="w-[43rem] z-20 absolute -bottom-20 left-[53%] transform -translate-x-1/2"
           unoptimized={true}
         />
         <div className="flex justify-between">
