@@ -171,3 +171,7 @@ body {
   grid-column-start: 2;
   grid-row-start: 1;
 }
+
+.custom-cursor {
+  cursor: url("../../public/images/button.svg"), auto;
+}
