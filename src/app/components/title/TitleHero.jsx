@@ -11,7 +11,6 @@ export default function TitleHero() {
   useEffect(() => {
     const tl = gsap.timeline();
 
-    // Animation pour le premier élément avec un délai initial de 9 secondes
     tl.fromTo(
       h2ref1.current,
       { y: "100%" },
@@ -22,7 +21,7 @@ export default function TitleHero() {
       },
       "+=7"
     )
-      // Ajoute un délai de 2ms pour la deuxième animation
+
       .fromTo(
         h2ref2.current,
         { y: "100%" },
@@ -31,7 +30,7 @@ export default function TitleHero() {
           duration: 0.5,
           ease: "power3.out",
         },
-        "+=0.002" // 2 ms
+        "+=0.002"
       )
 
       .fromTo(

@@ -13,12 +13,12 @@ export default function page() {
   return (
     <main className="relative overflow-hidden h-[300rem]">
       <IntroAnimation />
-      <section className="mx-14 flex flex-col justify-between h-screen relative py-10">
+      <section className="mx-14 bg-green-400 flex flex-col justify-between h-screen relative py-10">
         <div className="flex justify-between">
           <Image src={logo} alt="logo" width={100} height={100} />
           <Nav />
         </div>
-        <div className="mx-20">
+        <div className="mx-32 mb-32">
           <TitleHero />
         </div>
 
